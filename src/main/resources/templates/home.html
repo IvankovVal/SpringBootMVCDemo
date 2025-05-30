@@ -30,8 +30,7 @@
     </section>
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
+            <div th:each="element : ${exercises}">
                 <!--Карточка-->
                 <div class="col">
                     <div class="card shadow-sm">
@@ -43,7 +42,7 @@
                             <text x="50%" y="50%" fill="#eceeef" dy=".3em">Рисунок к заданию</text>
                         </svg>
                         <div class="card-body">
-                            <p class="card-text">
+                            <p th:utext="${element.exText}" class="card-text">
                                 Текст задания
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -51,7 +50,7 @@
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Проверить</button>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Попробовать снова</button>
                                 </div>
-                                <small class="text-body-secondary">Тип задания</small>
+                                <small th:utext="${element.exType}" class="text-body-secondary">Тип задания</small>
                             </div>
                         </div>
                     </div>

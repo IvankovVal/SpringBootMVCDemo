@@ -19,4 +19,9 @@ public class MainController {
         model.addAttribute("exercises", exercises);
         return "home";
     }
+
+    @GetMapping("/add")
+    public String exerciseAdd(Model model) {
+        return "exercise-add";
+    }
 }
